@@ -1,0 +1,133 @@
+.second-grid-container {
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+
+  .grid-item {
+    text-align: left;
+    padding: 20px;
+  }
+
+  .grid-item h3{
+    font-size: 20px;
+}
+
+.grid-item p{
+ margin-top: -50px;
+ font-size: 60px;
+}
+
+.grid-item h4{
+    margin-top: -20px;
+    font-size: 15px;
+  }
+
+  .grid-item img {
+      z-index: 1;
+    margin-left: 200px;
+    width: 25%;
+  }
+
+  .card-head-work {
+      border-radius: 20px;
+      background-color: hsl(15, 100%, 70%);
+  }
+
+  .card-body-work{
+      width: 323px;
+      position: absolute;
+      z-index: 2;
+      padding: 20px;
+      margin-top: -30px;
+      border-radius: 15px;
+      height: 190px;
+      background-color: hsl(235, 46%, 20%);
+  }
+
+  .card-head-play {
+    border-radius: 20px;
+    background-color: hsl(195, 74%, 62%);
+}
+
+.card-body-play{
+    width: 323px;
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    margin-top: -30px;
+    border-radius: 15px;
+    height: 190px;
+    background-color: hsl(235, 46%, 20%);
+}
+
+.card-head-study {
+    border-radius: 20px;
+    background-color: hsl(348, 100%, 68%);
+}
+
+.card-body-study{
+    width: 323px;
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    margin-top: -30px;
+    border-radius: 15px;
+    height: 190px;
+    background-color: hsl(235, 46%, 20%);
+}
+
+.card-head-exercise {
+    height: 50%;
+    margin-top: 160px;
+    border-radius: 20px;
+    background-color: hsl(145, 58%, 55%);
+}
+
+.card-body-exercise{
+    width: 323px;
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    margin-top: 0px;
+    border-radius: 15px;
+    height: 190px;
+    background-color: hsl(235, 46%, 20%);
+}
+
+.card-head-social {
+    margin-top: 160px;
+    border-radius: 20px;
+    background-color: hsl(264, 64%, 52%);
+}
+
+.card-body-social{
+    width: 323px;
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+      margin-top: -60px;
+      border-radius: 15px;
+      height: 190px;
+      background-color: hsl(235, 46%, 20%);
+}
+
+.card-head-self-care {
+    margin-top: 160px;
+    border-radius: 20px;
+    background-color: hsl(43, 84%, 65%);
+}
+
+.card-body-self-care{
+    width: 323px;
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    margin-top: -30px;
+    border-radius: 15px;
+    height: 190px;
+    background-color: hsl(235, 46%, 20%);
+}

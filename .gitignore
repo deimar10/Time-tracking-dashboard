@@ -10,6 +10,10 @@
 
 # production
 /build
+/public
+README.md
+README-template.md
+style-guide.md
 
 # misc
 .DS_Store
