@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Data from '../data.json';
-
-console.log(Data)
+import Popup from './Popup';
+import '../Assets/Popup.css';
 
 function Daily() {
 
   const [activities, setActivities] = useState(Data);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <body>
@@ -14,19 +20,30 @@ function Daily() {
           {activities.map((details, index) => {
             return (
               <div class="grid-item" key={index}>
-            <div class="card-head-work">
-              <img src="/images/icon-work.svg" />
-              </div>
-              <div class="card-body-work">
-                <h3>{details.title}</h3><br></br>
-                <p>{details.timeframes.daily.current}</p>
-                <h4>{details.timeframes.daily.previous}</h4>
-              </div>
+                <div class="card-head-work">
+                  <img src={details.image} />
+                </div>
+                <div class="card-body-work">
+                  <h3>{details.title}<span>
+                    <button onClick={togglePopup}>...</button></span></h3><br></br>
+
+                  {isOpen && <Popup
+                    content={<>
+                    <p>TERE</p>
+                    </>}
+                    handleClose={togglePopup}
+                  />}
+
+                  <p>{details.timeframes.daily.current}hrs</p>
+                  <h4>Last week - {details.timeframes.daily.previous}hrs
+                  </h4>
+                </div>
               </div>
             )
           })}
-            </div>
-          </div>
+        </div>
+      </div>
+      
     </body>
   );
 }

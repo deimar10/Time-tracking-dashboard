@@ -1,14 +1,20 @@
-import './App.css';
-import './Grid.css';
-import React, { useState }  from 'react';
-import Data from './data.json'
+import '../src/Assets/App.css';
+import '../src/Assets/Grid.css';
+import React, { useState, useEffect } from "react";
 import Daily from './components/Daily';
+import Weekly from './components/Weekly';
+import Monthly from './components/Monthly';
 
 function App() {
 
+const [time, setTime] = useState('daily')
+
+const handleClick = (timeState) => {
+  setTime(timeState)
+}
+
 return (
 <>
-
     <div class="main-container">
       <div class="grid-container">
         <div class="item1">
@@ -20,23 +26,32 @@ return (
                 <p>Jeremy Robson</p>
               </div>
               <div class="card-body-profile">
-                <button>Daily</button><br></br>
-                <button>Weekly</button><br></br>
-                <button>Monthly</button>
+                <button onClick={ () => handleClick('daily')}>Daily</button><br></br>
+                <button onClick={ () => handleClick('weekly')}>Weekly</button><br></br>
+                <button onClick={ () => handleClick('monthly')}>Monthly</button><br></br>
               </div>
             </div>
           </div>
         </div>
 
-        < Daily />
-
+        {(() => {
+                  switch (time) {
+                    case 'daily':
+                      return <Daily handleClick={handleClick} />;
+                    case 'weekly': 
+                      return <Weekly handleClick={handleClick} />;
+                    case 'monthly':
+                      return <Monthly handleClick={handleClick} />;
+                    default: 
+                      return null;
+                  }
+                })()}
       </div>
     </div>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </div>
-
 </>
 );
 }
