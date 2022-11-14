@@ -1,5 +1,6 @@
 import '../src/Assets/App.css';
 import '../src/Assets/Grid.css';
+import '../src/Assets/ActivityDetails.css'
 import React, { useState, useEffect } from "react";
 import Daily from './components/Daily';
 import Weekly from './components/Weekly';
@@ -50,7 +51,7 @@ return (
     </div>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">Deimar pärn</a>.
     </div>
 </>
 );

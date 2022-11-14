@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Data from '../data.json';
-import Popup from './Popup';
-import '../Assets/Popup.css';
+import Activitydetails from "./Activitydetails";
 
 function Daily() {
 
   const [activities, setActivities] = useState(Data);
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
+  const [view, setView] = useState(false);
+  const [activityDetails, setActivityDetails] = useState();
+  
+  const handleDetails = (details )=> {
+    setActivityDetails (details);
+    setView (true);
   }
 
   return (
     <body>
+      {view ? <Activitydetails activityDetails={activityDetails} 
+      setView={setView} /> :
       <div class="item2">
         <div class="second-grid-container">
           {activities.map((details, index) => {
@@ -31,15 +33,7 @@ function Daily() {
                 </div>
                 <div class="card-body-work">
                   <h3>{details.title}<span>
-                    <button onClick={togglePopup}>...</button></span></h3><br></br>
-
-                  {isOpen && <Popup
-                    content={<>
-                    <p>TERE</p>
-                    </>}
-                    handleClose={togglePopup}
-                  />}
-
+                    <button onClick={ e => handleDetails(details)}>...</button></span></h3><br></br>
                   <p>{details.timeframes.daily.current}hrs</p>
                   <h4>Last week - {details.timeframes.daily.previous}hrs
                   </h4>
@@ -49,7 +43,7 @@ function Daily() {
           })}
         </div>
       </div>
-      
+      } 
     </body>
   );
 }

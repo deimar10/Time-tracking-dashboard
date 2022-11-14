@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Data from '../data.json';
-import Popup from "./Popup";
-import '../Assets/Popup.css';
+import Activitydetails from "./Activitydetails";
 
 function Weekly() {
 
   const [activities, setActivities] = useState(Data);
+  const [view, setView] = useState(false);
+  const [activityDetails, setActivityDetails] = useState();
+
+  const handleDetails = (details )=> {
+    setActivityDetails (details);
+    setView (true);
+  }
 
   return (
     <body>
+      {view ? <Activitydetails activityDetails={activityDetails} 
+      setView={setView} /> :
       <div class="item2">
         <div class="second-grid-container">
           {activities.map((details, index) => {
@@ -24,7 +32,8 @@ function Weekly() {
                   <img src={details.image} />
                 </div>
                 <div class="card-body-work">
-                <h3>{details.title}<span><button>...</button></span></h3><br></br>
+                <h3>{details.title}<span>
+                  <button onClick={ e => handleDetails(details)}>...</button></span></h3><br></br>
                   <p>{details.timeframes.weekly.current}hrs</p>
                   <h4>Last week - {details.timeframes.weekly.previous}hrs
                   </h4>
@@ -34,6 +43,7 @@ function Weekly() {
           })}
         </div>
       </div>
+          }   
     </body>
   );
 }

@@ -1,0 +1,53 @@
+.activityDetail-card-head {
+    width: 363px;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color: hsl(15, 100%, 70%);
+}
+
+.activityDetail-card-body {
+    width: 325px;
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    margin-top: -30px;
+    border-radius: 15px;
+    background-color: hsl(235, 46%, 20%);
+}
+
+.activityDetail-card-body h2{
+    font-size: 22px;
+}
+
+.activityDetail-card-head img {
+    z-index: 1;
+    margin-left: 220px;
+    width: 95px;
+    height: 90px;
+  }
+
+#back {
+cursor: pointer;
+float: right;
+background-color: rgba(255, 255, 255, 0);
+border: 0px solid rgba(255, 255, 255, 0);
+font-size: 35px;
+}
+
+#crnt {
+    font-size: 60px;
+    margin-top: 5px;
+}
+
+
+#crnt span{
+    font-size: 20px;
+}
+
+.activityDetail-card-body #prvs {
+    margin-left: 5px;
+    margin-bottom: 60px;
+    margin-top: -60px;
+    font-size: 15px;
+    font-weight: 700;
+}
